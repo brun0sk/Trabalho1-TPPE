@@ -1,37 +1,51 @@
 package code;
 
 public class Produto {
-    private String nome;
-    private double preco;
-    private int quantidade;
+    private String descricao;
+    private int codigo;
+    private float valor;
+    private String unidade;
 
-    public Produto(String nome, double preco, int quantidade) {
-        this.nome = nome;
-        this.preco = preco;
-        this.quantidade = quantidade;
+    public Produto() {
+        
     }
 
-    public String getNome() {
-        return nome;
+    public String getdescricao() {
+        return descricao;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setdescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public double getPreco() {
-        return preco;
+    public double getcodigo() {
+        return codigo;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setcodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public float getvalor() {
+        return valor;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setvalor(float valor) {
+        this.valor = valor;
+    }
+
+    public float getunidade() {
+        return valor;
+    }
+
+    public void setunidade(float valor) {
+        this.valor = valor;
+    }
+
+    public void cadastarProduto(int codigo, String descricao, float valor, String unidade) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.unidade = unidade;
     }
 }
