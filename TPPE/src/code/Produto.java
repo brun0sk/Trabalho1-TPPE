@@ -1,51 +1,49 @@
 package code;
 
 public class Produto {
+
+    private String codigo;
     private String descricao;
-    private int codigo;
-    private float valor;
+    private double valorVenda;
     private String unidade;
 
-    public Produto() {
-        
-    }
-
-    public String getdescricao() {
-        return descricao;
-    }
-
-    public void setdescricao(String descricao) {
+    public Produto(String codigo, String descricao, double valorVenda, String unidade){
+        this.codigo = codigo;
         this.descricao = descricao;
+        this.valorVenda = valorVenda;
+        this.unidade = unidade;
     }
 
-    public double getcodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setcodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
-    public float getvalor() {
-        return valor;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setvalor(float valor) {
-        this.valor = valor;
-    }
-
-    public float getunidade() {
-        return valor;
-    }
-
-    public void setunidade(float valor) {
-        this.valor = valor;
-    }
-
-    public void cadastarProduto(int codigo, String descricao, float valor, String unidade) {
-        this.codigo = codigo;
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
-        this.valor = valor;
+    }
+
+    public double getValorVenda() {
+        return valorVenda;
+    }
+
+    public void setValorVenda(double valorVenda) {
+        this.valorVenda = valorVenda;
+    }
+
+    public String getUnidade() {
+        return unidade;
+    }
+
+    public void setUnidade(String unidade) {
         this.unidade = unidade;
     }
+
 }

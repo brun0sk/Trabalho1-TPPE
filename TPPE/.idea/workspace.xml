@@ -5,7 +5,9 @@
       <change beforePath="$PROJECT_DIR$/bin/code/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/code/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/code/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/code/Produto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/code/Venda.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/code/Venda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/testes/CadastroProdutoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/testes/CadastroProdutoTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/testes/VendaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/testes/VendaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testes/CadastroProdutoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testes/CadastroProdutoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +22,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/jackes/dev/Trabalho1-TPPE/TPPE"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jackes/dev/Trabalho1-TPPE/TPPE&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
