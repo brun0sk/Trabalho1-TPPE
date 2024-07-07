@@ -2,8 +2,12 @@ package code;
 
 
 public class ClientEspecial extends Cliente {
+	
+	private String tipo;
+	
 	public ClientEspecial(String nome, String cpf, String endereco) {
 		super(nome, cpf, endereco);
+		this.tipo="Especial";
 	}
 
 	public double calcularDesconto(double valorCompra, String numeroCartao) {
