@@ -31,7 +31,7 @@ public class ClientePrimeTest {
     }
 
     @Test
-    public void naoDeveUsarCashbackAlemDoSaldo() {
+    public void testeNaoUsarCashbackAlemDoSaldo() {
         clientePrime.calcularECreditarCashback(100.0); 
         clientePrime.utilizarCashback(10.0); 
         clientePrime.utilizarCashback(10.0); 
@@ -40,7 +40,7 @@ public class ClientePrimeTest {
     }
 
     @Test
-    public void saldoCashbackNaoDeveSerNegativo() {
+    public void testeSaldoCashbackNaoSerNegativo() {
         clientePrime.calcularECreditarCashback(50.0); 
         clientePrime.utilizarCashback(100.0);
         assertTrue("Saldo de cashback não deve ser negativo.", clientePrime.getSaldoCashback() >= 0);
