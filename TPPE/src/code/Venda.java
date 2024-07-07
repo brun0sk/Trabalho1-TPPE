@@ -60,6 +60,12 @@ public class Venda {
                 clientePrime.utilizarCashback(saldoCashback);
                 return totalComFreteDesconto - saldoCashback;
             }
+
+            
+        }
+
+        if (cliente instanceof ClientePrime) {
+            ((ClientePrime) cliente).calcularECreditarCashback(this.valorTotal);
         }
 
         return totalComFreteDesconto;

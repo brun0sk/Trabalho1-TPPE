@@ -23,4 +23,10 @@ public class ClientePrime extends Cliente {
     public void creditarCashback(double valor) {
         saldoCashback += valor;
     }
+
+    public void calcularECreditarCashback(double valorTotalDaCompra) {
+        double taxaCashback = 0.05; 
+        double valorCashback = valorTotalDaCompra * taxaCashback;
+        creditarCashback(valorCashback);
+    }
 }
