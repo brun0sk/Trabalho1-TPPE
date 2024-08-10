@@ -9,11 +9,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import code.Produto;
 
 @RunWith(Parameterized.class)
 public class testeProduto {
 
     String codigo;
+    String nome;
     String descricao;
     double valorVenda;
     String unidade;
@@ -21,10 +23,9 @@ public class testeProduto {
     @Parameters
     public static Collection<Object[]> getParameters(){
         Object[][] resposta = new  Object[][] {
-            {"P001", "Banana", 8.00, "Kg"},
-            {"P002", "Feijão", 9.00, "unidade"},
-            {"P003", "Arroz", 25.00, "unidade"},
-            {"P004", "Café", 18.00, "unidade"}
+            {"001", "Notebook", "Asus, I5 11º, 4GB RAM, SSD 256GB, Cinza", 2500.00, "unidade"},
+            {"002", "S24 Ultra", "Snapdragon 8 Gen 3, 12GB RAM, 512GB ROM, Titanio Preto",7300.00, "unidade"},
+            {"003", "Iphone 15 Pro Max", "A17 PRO, 8GB RAM, 256GB ROM, Titanio Natural", 9000.00, "unidade"}
         };
         return Arrays.asList(resposta);
     }
@@ -38,7 +39,7 @@ public class testeProduto {
 
     @Test
     public void testeCadastroProduto(){
-        Produto produto = new Produto(codigo, descricao, valorVenda, unidade);
+        Produto produto = new Produto(this.codigo, this.nome, this.descricao, this.valorVenda, this.unidade, 50.00, 2);
         assertEquals(codigo, produto.getCodigo());
         assertEquals(descricao, produto.getDescricao());
         assertEquals(valorVenda, produto.getValorVenda(), 0.01);

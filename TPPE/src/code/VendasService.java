@@ -3,8 +3,6 @@ package code;
 import java.util.List;
 import java.util.Calendar;
 
-
-
 public class VendasService {
 
     public double calcularTotalVendasUltimoMes(Cliente cliente, List<Venda> vendas) {

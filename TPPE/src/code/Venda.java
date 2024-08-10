@@ -7,25 +7,17 @@ public class Venda {
     private Date data;
     private Cliente cliente;
     private List<Produto> produtos;
-    private double valorTotal;
+    private NotaFiscal notaFiscal;
     private MetodoPagamento metodoPagamento;
-    private double valorFrete;
-    private double desconto;
-    private double impostoICMS;
-    private double impostoMunicipal;
-    private double valorFinal;
 
     public Venda(Date data, Cliente cliente, List<Produto> produtos, MetodoPagamento metodoPagamento, double valorFrete, double desconto) {
         this.data = data;
         this.cliente = cliente;
         this.produtos = produtos;
         this.metodoPagamento = metodoPagamento;
-        this.valorFrete = valorFrete;
-        this.desconto = desconto;
-        this.valorTotal = calcularValorTotal();
-        this.impostoICMS = calcularImpostoICMS();
-        this.impostoMunicipal = calcularImpostoMunicipal();
-        this.valorFinal = calcularValorFinal();
+
+        double valorTotal = calcularValorTotal();
+        this.notaFiscal = new NotaFiscal(valorTotal, valorFrete, desconto, cliente);
     }
 
     private double calcularValorTotal() {
@@ -35,43 +27,6 @@ public class Venda {
         }
         return total;
     }
-
-    public double calcularImpostoICMS() {
-        // Suponha uma taxa de ICMS de 18%
-        return valorTotal * 0.18;
-    }
-
-    public double calcularImpostoMunicipal() {
-        //Suponha uma taxa de imposto municipal de 5%
-        return valorTotal * 0.05;
-    }
-
-    private double calcularValorFinal() {
-        double totalComImpostos = valorTotal + impostoICMS + impostoMunicipal;
-        double totalComFreteDesconto = totalComImpostos + valorFrete - desconto;
-
-        if (cliente instanceof ClientePrime) {
-            ClientePrime clientePrime = (ClientePrime) cliente;
-            double saldoCashback = clientePrime.getSaldoCashback();
-            if (saldoCashback > totalComFreteDesconto) {
-                clientePrime.utilizarCashback(totalComFreteDesconto);
-                return 0.0;
-            } else {
-                clientePrime.utilizarCashback(saldoCashback);
-                return totalComFreteDesconto - saldoCashback;
-            }
-
-            
-        }
-
-        if (cliente instanceof ClientePrime) {
-            ((ClientePrime) cliente).calcularECreditarCashback(this.valorTotal);
-        }
-
-        return totalComFreteDesconto;
-    }
-    
-    
 
     public Date getData() {
         return data;
@@ -86,7 +41,7 @@ public class Venda {
     }
 
     public double getValorTotal() {
-        return valorTotal;
+        return notaFiscal.getValorTotal();
     }
 
     public MetodoPagamento getMetodoPagamento() {
@@ -94,23 +49,23 @@ public class Venda {
     }
 
     public double getValorFrete() {
-        return valorFrete;
+        return notaFiscal.getValorTotal();
     }
 
     public double getDesconto() {
-        return desconto;
+        return notaFiscal.getValorTotal();
     }
 
     public double getImpostoICMS() {
-        return impostoICMS;
+        return notaFiscal.getImpostoICMS();
     }
 
     public double getImpostoMunicipal() {
-        return impostoMunicipal;
+        return notaFiscal.getImpostoMunicipal();
     }
 
     public double getValorFinal() {
-        return valorFinal;
+        return notaFiscal.getValorFinal();
     }
 
     public enum MetodoPagamento {
