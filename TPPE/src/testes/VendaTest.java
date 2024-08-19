@@ -3,6 +3,7 @@ package testes;
 import code.Cliente;
 import code.ClientePrime;
 import code.NotaFiscal;
+import org.junit.Test;
 
 class NotaFiscalTest {
 
